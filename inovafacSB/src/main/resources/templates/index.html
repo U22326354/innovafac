@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>CMCINNOVA</title>
+    <link rel="shortcut icon" type="image/x-icon" href="web/assets/img/favicon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ======== CSS here ======== -->
+    <link rel="stylesheet" href="web/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="web/assets/css/lineicons.css" />
+    <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="web/assets/css/animate.css" />
+    <link rel="stylesheet" href="web/assets/css/main.css" />
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- ======== header start ======== -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="./assets/img/logo-white.png" alt="Logo" />
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a class="page-scroll active" href="#home">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#features">Servicios</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="#pricing" class="page-scroll">Precios</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#galeria" class="page-scroll">Clientes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#testimonials">Testimonios</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#contact">Contacto</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ======== header end ======== -->
+
+    <!-- ======== hero-section start ======== -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center position-relative">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="wow fadeInUp h3" data-wow-delay=".4s">
+                            Sistema de Facturacion Electronica PERU
+                            <span <td th:text="${titulo}"  > </span>
+                        </h1>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">
+                            Siempre a la vanguardia de la tecnologia para tu empresa
+                        </p>
+                        <a href="javascript:void(0)" class="main-btn border-btn btn-hover wow fadeInUp"
+                            data-wow-delay=".6s">Comienza ahora</a>
+                        <a href="#features" class="scroll-bottom">
+                            <i class="lni lni-arrow-down"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
+                        <img src="web/assets/img/hero/hero-img.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== hero-section end ======== -->
+
+    <!-- ======== feature-section start ======== -->
+    <section id="features" class="feature-section pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="lni lni-file-multiple"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Facturacion</h3>
+                            <p>
+                                Nuestro sistema de facturación electrónica está diseñado para simplificar y automatizar
+                                el proceso de emisión y recepción de documentos electrónicos.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="lni lni-file-pencil"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Contabilidad</h3>
+                            <p>
+                                Permitiendo un seguimiento detallado de las finanzas y asegurando el cumplimiento de las
+                                normativas fiscales de manera eficiente.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-10">
+                    <div class="single-feature">
+                        <div class="icon">
+                            <i class="lni lni-buildings-1"></i>
+                        </div>
+                        <div class="content">
+                            <h3>Inventario</h3>
+                            <p>
+                                Lleva un control detallado del inventario disponible, asegurando una eficiente
+                                administración de recursos y facilitando el manejo del kardex, ventas y facturación de
+                                productos.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== feature-section end ======== -->
+
+    <!-- ======== about-section start ======== -->
+    <!--  <section id="about" class="about-section pt-150">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-img">
+                        <img src="web/assets/img/about/about-1.png" alt="" class="w-100" />
+                        <img src="web/assets/img/about/about-left-shape.svg" alt="" class="shape shape-1" />
+                        <img src="web/assets/img/about/left-dots.svg" alt="" class="shape shape-2" />
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title mb-30">
+                            <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
+                                Solución perfecta para administrar un negocio
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".4s">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                dinonumy eirmod tempor invidunt ut labore et dolore magna
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                                sea takimata sanctus est Lorem.Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                        <a href="javascript:void(0)" class="main-btn btn-hover border-btn wow fadeInUp"
+                            data-wow-delay=".6s">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- ======== about-section end ======== -->
+
+    <!-- ======== about2-section start ======== -->
+    <!-- <section id="about" class="about-section pt-150">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title mb-30">
+                            <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
+                                Fácil de usar y con muchísimas funciones para tu negocio
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".4s">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                aliquyam erat, sed diam voluptua.
+                            </p>
+                        </div>
+                        <ul>
+                            <li>Acceso rapido</li>
+                            <li>Facil de gestionar</li>
+                            <li>Soporte 24/7 </li>
+                        </ul>
+                        <a href="javascript:void(0)" class="main-btn btn-hover border-btn wow fadeInUp"
+                            data-wow-delay=".6s">Leer mas</a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 order-first order-lg-last">
+                    <div class="about-img-2">
+                        <img src="web/assets/img/about/about-2.png" alt="" class="w-100" />
+                        <img src="web/assets/img/about/about-right-shape.svg" alt="" class="shape shape-1" />
+                        <img src="web/assets/img/about/right-dots.svg" alt="" class="shape shape-2" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- ======== about2-section end ======== -->
+
+    <!-- ======== feature-section start ======== -->
+    <!--  <section id="why" class="feature-extended-section pt-100">
+        <div class="feature-extended-wrapper">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-5 col-xl-6 col-lg-8 col-md-9">
+                        <div class="section-title text-center mb-60">
+                            <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
+                                Porque elegirnos
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay=".4s">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature-extended">
+                            <div class="icon">
+                                <i class="lni lni-display"></i>
+                            </div>
+                            <div class="content">
+                                <h3>SaaS Focused</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                    diam nonumy eirmod tempor invidunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature-extended">
+                            <div class="icon">
+                                <i class="lni lni-leaf"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Awesome Design</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                    diam nonumy eirmod tempor invidunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature-extended">
+                            <div class="icon">
+                                <i class="lni lni-grid-alt"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Ready to Use</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                    diam nonumy eirmod tempor invidunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature-extended">
+                            <div class="icon">
+                                <i class="lni lni-javascript"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Vanilla JS</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                    diam nonumy eirmod tempor invidunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature-extended">
+                            <div class="icon">
+                                <i class="lni lni-layers"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Essential Sections</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                    diam nonumy eirmod tempor invidunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature-extended">
+                            <div class="icon">
+                                <i class="lni lni-rocket"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Highly Optimized</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                    diam nonumy eirmod tempor invidunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- ======== feature-section end ======== -->
+
+    <!-- ======== precios ======== -->
+    <section id="pricing" class="pricing-section pt-120 pb-120 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-5 col-xl-6 col-lg-8 col-md-9">
+                    <div class="section-title text-center mb-35">
+                        <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s"
+                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            ELIGE TU PLAN
+                        </h2>
+                        <p class="wow fadeInUp" data-wow-delay=".4s"
+                            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                            Elige el plan que mejor se adapte a las necesidades de tu negocio. Ofrecemos opciones
+                            flexibles para que puedas maximizar el valor de nuestros servicios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-nav-wrapper mb-60">
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li role="presentation">
+                        <a class="active" id="pills-month-tab" data-bs-toggle="pill" href="#pills-month" role="tab"
+                            aria-controls="pills-month" aria-selected="true">Mensual</a>
+                    </li>
+                    <li role="presentation">
+                        <a id="pills-year-tab" data-bs-toggle="pill" href="#pills-year" role="tab"
+                            aria-controls="pills-year" aria-selected="false">Anual</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-month" role="tabpanel"
+                    aria-labelledby="pills-month-tab">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-8 col-sm-10">
+                            <div class="single-pricing">
+                                <div class="pricing-header">
+                                    <h1 class="price">s/. 36.00</h1>
+                                    <h3 class="package-name">Plan Básico</h3>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Acceso ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Un usuario
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Almacenamiento ilimitado
+                                        </li>
+                                        <li><i class="lni lni-close"></i> Soporte 24/7</li>
+                                        <li><i class="lni lni-close"></i> Actualizaciones futuras</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="javascript:void(0)" class="main-btn btn-hover border-btn">Iniciar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10">
+                            <div class="single-pricing">
+                                <div class="pricing-header">
+                                    <h1 class="price">s/. 56.00</h1>
+                                    <h3 class="package-name">Plan Standard</h3>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Acceso ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> 20+ Usuarios
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Almacenamiento ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Soporte 24/7
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Actualizaciones futuras
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="javascript:void(0)" class="main-btn btn-hover">Iniciar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10">
+                            <div class="single-pricing">
+                                <div class="pricing-header">
+                                    <h1 class="price">s/. 89.00</h1>
+                                    <h3 class="package-name">Plan Premium</h3>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Acceso ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Usuarios ilimitados
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Almacenamiento ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Soporte 24/7
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Actualizaciones futuras
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="javascript:void(0)" class="main-btn btn-hover border-btn">Iniciar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-year" role="tabpanel" aria-labelledby="pills-year-tab">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-8 col-sm-10">
+                            <div class="single-pricing">
+                                <div class="pricing-header">
+                                    <h1 class="price">s/. 136.00</h1>
+                                    <h3 class="package-name">Plan Básico</h3>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Acceso ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Un usuario
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Almacenamiento ilimitado
+                                        </li>
+                                        <li><i class="lni lni-close"></i> 24/7 Support</li>
+                                        <li><i class="lni lni-close"></i> Free Future Updates</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="javascript:void(0)" class="main-btn btn-hover border-btn">Iniciar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10">
+                            <div class="single-pricing">
+                                <div class="pricing-header">
+                                    <h1 class="price">s/. 156.00</h1>
+                                    <h3 class="package-name">Plan Standard</h3>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Acceso ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> 20+ Usuarios
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Almacenamiento ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Soporte 24/7
+                                        </li>
+                                        <li><i class="lni lni-close"></i> Free Future Updates</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="javascript:void(0)" class="main-btn btn-hover">Iniciar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-8 col-sm-10">
+                            <div class="single-pricing">
+                                <div class="pricing-header">
+                                    <h1 class="price">s/. 189.00</h1>
+                                    <h3 class="package-name">Plan Premium</h3>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Acceso ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Usuarios ilimitados
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Almacenamiento ilimitado
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Soporte 24/7
+                                        </li>
+                                        <li>
+                                            <i class="lni lni-checkmark active"></i> Actualizaciones futuras
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-btn">
+                                    <a href="javascript:void(0)" class="main-btn btn-hover border-btn">Iniciar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== pricing-section end ======== -->
+
+    <!--=========== galeria ===========-->
+    <section id="galeria" class="galeria-section pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2 class="mb-30">Galeria</h2>
+                        <p class="mb-30">Disfruta de la experiencia de nuestros clientes</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="card client-gallery-item">
+                                    <div class="card-body">
+                                        <img src="https://dummyimage.com/300x300/ddd/aaa" alt="Client 1"
+                                            class="card-img-top img-fluid">
+                                        <h5 class="card-title text-center mt-20">Vh Farmacia</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="card client-gallery-item">
+                                    <div class="card-body">
+                                        <img src="https://dummyimage.com/300x300/ddd/aaa" alt="Client 2"
+                                            class="card-img-top img-fluid">
+                                        <h5 class="card-title text-center mt-20">GT System Shop</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="card client-gallery-item">
+                                    <div class="card-body">
+                                        <img src="https://dummyimage.com/300x300/ddd/aaa" alt="Client 3"
+                                            class="card-img-top img-fluid">
+                                        <h5 class="card-title text-center mt-20">MiliFarm</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="card client-gallery-item">
+                                    <div class="card-body">
+                                        <img src="https://dummyimage.com/300x300/ddd/aaa" alt="Client 4"
+                                            class="card-img-top img-fluid">
+                                        <h5 class="card-title text-center mt-20">Innovate Inka Cola</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=========== galeria end ===========-->
+
+    <!-- ======== testimonial-section end ======== -->
+    <section id="testimonials" class="testimonial-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="mb-30">Testimonios</h2>
+            </div>
+            <div class="testimonial-active-wrapper">
+                <div class="shapes">
+                   <!--  <img src="https://dummyimage.com/1280x720/000/fff" alt="" class="shape shape-1">
+                    <img src="https://dummyimage.com/1280x720/000/fff" alt="" class="shape shape-2"> -->
+                </div>
+
+                <div class="tns-outer" id="tns1-ow">
+                    <div class="tns-controls" aria-label="Carousel Navigation" tabindex="0"><button type="button"
+                            data-controls="prev" tabindex="-1" aria-controls="tns1"><i
+                                class="lni lni-chevron-left prev"></i></button><button type="button"
+                            data-controls="next" tabindex="-1" aria-controls="tns1"><i
+                                class="lni lni-chevron-right next"></i></button></div>
+                    <!-- <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">slide <span
+                            class="current">2</span> de 3</div> -->
+                    <div class="tns-inner" id="tns1-iw">
+                        <div class="testimonial-active tns-slider tns-gallery tns-subpixel tns-calc tns-horizontal"
+                            id="tns1">
+                            <!-- single testimonial -->
+                            <div class="single-testimonial tns-item tns-normal" id="tns1-item0" style=""
+                                aria-hidden="true" tabindex="-1">
+                                <div class="row">
+                                    <div class="col-xl-5 col-lg-5">
+                                        <div class="testimonial-img">
+                                            <!-- <img src="https://dummyimage.com/200x100/777/fff" alt="Lorem Ipsum"> -->
+                                            <div class="quote">
+                                                <i class="lni lni-quotation"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-6 offset-xl-1 col-lg-6 offset-lg-1">
+                                        <div class="content-wrapper">
+                                            <div class="content">
+                                                <p>
+                                                    Poder personalizar las facturas con nuestro logo y datos de empresa nos da una imagen mucho más profesional. ¡Un gran
+                                                    detalle!
+                                                </p>
+                                            </div>
+                                            <div class="info">
+                                                <h4>Jonathon Smith</h4>
+                                                <p>Developer and Youtuber</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- single testimonial -->
+                            <div class="single-testimonial tns-item tns-slide-active tns-fadeIn" id="tns1-item1"
+                                style="left: 0%;">
+                                <div class="row">
+                                    <div class="col-xl-5">
+                                        <div class="testimonial-img">
+                                           <!--  <img src="https://dummyimage.com/200x100/777/fff" alt=""> -->
+                                            <div class="quote">
+                                                <i class="lni lni-quotation"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-6 offset-xl-1">
+                                        <div class="content-wrapper">
+                                            <div class="content">
+                                                <p>
+                                                    Desde que usamos este sistema, nuestros clientes comentan lo claras y detalladas que son las facturas. ¡Excelente para
+                                                    evitar confusiones!
+                                                </p>
+                                            </div>
+                                            <div class="info">
+                                                <h4>Gray Simon</h4>
+                                                <p>UIX Designer and Developer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- single testimonial -->
+                            <div class="single-testimonial tns-item tns-normal" id="tns1-item2" style=""
+                                aria-hidden="true" tabindex="-1">
+                                <div class="row">
+                                    <div class="col-xl-5">
+                                        <div class="testimonial-img">
+                                            <!-- <img src="https://dummyimage.com/200x100/777/fff" alt=""> -->
+                                            <div class="quote">
+                                                <i class="lni lni-quotation"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-6 offset-xl-1">
+                                        <div class="content-wrapper">
+                                            <div class="content">
+                                                <p>
+                                                    La facturación es súper sencilla y rápida. Antes perdía mucho tiempo
+                                                    con eso, ¡ahora es cuestión de minutos!
+                                                </p>
+                                            </div>
+                                            <div class="info">
+                                                <h4>Michel Smith</h4>
+                                                <p>Traveler and Vloger</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-testimonial tns-item tns-slide-cloned tns-normal" style=""
+                                aria-hidden="true" tabindex="-1">
+                                <div class="row">
+                                    <div class="col-xl-5 col-lg-5">
+                                        <div class="testimonial-img">
+                                            <!-- <img src="https://dummyimage.com/200x100/777/fff" alt=""> -->
+                                            <div class="quote">
+                                                <i class="lni lni-quotation"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-6 offset-xl-1 col-lg-6 offset-lg-1">
+                                        <div class="content-wrapper">
+                                            <div class="content">
+                                                <p>
+                                                Me encanta que las facturas se generen automáticamente después de cada venta. ¡Adiós a los errores y al papeleo!
+                                                </p>
+                                            </div>
+                                            <div class="info">
+                                                <h4>Jonathon Smith</h4>
+                                                <p>Developer and Youtuber</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======== testimonial-section end ======== -->
+
+    <!-- ======== subscribe-section start ======== -->
+    <section id="contact" class="subscribe-section pt-120">
+        <div class="container">
+            <div class="subscribe-wrapper img-bg">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="section-title mb-15">
+                            <h2 class="text-white mb-25">Contactanos</h2>
+                            <p class="text-white pr-5">
+                                Déjanos un mensaje y nos pondremos en contacto contigo lo antes posible.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <form>
+                            <div class="h4 text-white">Datos de Persona o Empresa</div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="tipo_doc" class="form-label text-white">Tipo Documento</label>
+                                    <select class="form-control form-control-lg" id="tipo_doc" name="tipo_doc" required>
+                                        <option value="" disabled selected>Tipo de documento</option>
+                                        <option value="dni">DNI</option>
+                                        <option value="ruc">RUC</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="num_doc" class="form-label text-white">Número Documento</label>
+                                    <input type="text" class="form-control form-control-lg" id="num_doc" name="num_doc"
+                                        maxlength="50" required>
+                                </div>
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="nombre_completos" class="form-label text-white">Nombres Completos</label>
+                                <input type="text" class="form-control form-control-lg" id="nombre_completos" name="nombre_completos"
+                                    maxlength="100" required>
+                            </div> -->
+                            <!--   <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="apellidos_paterno" class="form-label text-white">Apellidos Paterno</label>
+                                    <input type="text" class="form-control form-control-lg" id="apellidos_paterno" name="apellidos_paterno" maxlength="100" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="apellido_materno" class="form-label text-white">Apellido Materno</label>
+                                    <input type="text" class="form-control form-control-lg" id="apellido_materno" name="apellido_materno" maxlength="100" required>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="h4 text-white">Datos de Empresa</div>
+                            <div class="mb-3">
+                                <label for="razon_social" class="form-label text-white">Razón Social</label>
+                                <input type="text" class="form-control form-control-lg" id="razon_social" name="razon_social"
+                                    maxlength="255" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombre_comercial" class="form-label text-white">Nombre Comercial</label>
+                                <input type="text" class="form-control form-control-lg" id="nombre_comercial" name="nombre_comercial"
+                                    maxlength="255" required>
+                            </div> -->
+
+                            <hr>
+                            <div class="h4 text-white">Datos de Contacto</div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="correo" class="form-label text-white">Correo Electrónico</label>
+                                    <input type="email" class="form-control form-control-lg" id="correo" name="correo"
+                                        maxlength="100" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefono" class="form-label text-white">Teléfono</label>
+                                    <input type="text" class="form-control form-control-lg" id="telefono"
+                                        name="telefono" maxlength="20" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label text-white">Dirección</label>
+                                <input type="text" class="form-control form-control-lg" id="direccion" name="direccion"
+                                    maxlength="255" required>
+                            </div>
+                            <button type="submit" class="btn btn-dark px-5 py-3 rounded-pill">Enviar</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ======== subscribe-section end ======== -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="widget-wrapper">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <div class="logo mb-30">
+                                <a href="index.html">
+                                    <img src="./assets/img/logo-white.png" alt="" />
+                                </a>
+                            </div>
+                            <p class="desc mb-30 text-white">
+                                Asistente inteligente que te ayuda a llevar el control de todas tus ventas y clientes en
+                                un solo lugar y dar seguimiento a tus clientes, y finalmente, cerrar más ventas!
+                            </p>
+                            <ul class="socials">
+                                <li>
+                                    <a href="jvascript:void(0)">
+                                        <i class="lni lni-facebook-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="jvascript:void(0)">
+                                        <i class="lni lni-twitter-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="jvascript:void(0)">
+                                        <i class="lni lni-instagram-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="jvascript:void(0)">
+                                        <i class="lni lni-linkedin-original"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Menus</h3>
+                            <ul class="links">
+                                <li><a href="javascript:void(0)">Inicio</a></li>
+                                <li><a href="javascript:void(0)">Servicios</a></li>
+                                <li><a href="javascript:void(0)">Precios</a></li>
+                                <li><a href="javascript:void(0)">Clientes</a></li>
+                                <li><a href="javascript:void(0)">Testimonios</a></li>
+                                <li><a href="javascript:void(0)">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Enlaces</h3>
+                            <ul class="links">
+                                <li><a href="javascript:void(0)">Política de privacidad</a></li>
+                                <li><a href="javascript:void(0)">Términos y condiciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h3>Productos</h3>
+                            <ul class="links">
+                                <li><a href="jvascript:void(0)">Software de contabilidad</a></li>
+                                <li><a href="jvascript:void(0)">Software de facturación</a></li>
+                                <li><a href="jvascript:void(0)">Software de reservas</a></li>
+                                <li><a href="jvascript:void(0)">Software de seguimiento</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ======== footer end ======== -->
+
+    <!-- ======== scroll-top ======== -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ======== JS here ======== -->
+    <script src="web/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="web/assets/js/wow.min.js"></script>
+    <script src="web/assets/js/main.js"></script>
+</body>
+
+</html>
