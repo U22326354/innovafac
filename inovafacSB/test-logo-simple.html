@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Logo</title>
+    <style>
+        .test-container {
+            padding: 20px;
+            background: #6c63ff;
+            margin: 20px 0;
+        }
+        .test-container.white {
+            background: white;
+            border: 1px solid #ccc;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+        h3 {
+            color: white;
+        }
+        .white h3 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Logos</h1>
+    
+    <div class="test-container">
+        <h3>Logo Blanco (para fondo oscuro):</h3>
+        <img src="/web/assets/img/logo/logo-white.png" alt="Logo Blanco" />
+        <p>URL: <a href="http://localhost:8080/web/assets/img/logo/logo-white.png" target="_blank">http://localhost:8080/web/assets/img/logo/logo-white.png</a></p>
+    </div>
+    
+    <div class="test-container white">
+        <h3>Logo Oscuro (para fondo blanco):</h3>
+        <img src="/web/assets/img/logo/logo.png" alt="Logo Oscuro" />
+        <p>URL: <a href="http://localhost:8080/web/assets/img/logo/logo.png" target="_blank">http://localhost:8080/web/assets/img/logo/logo.png</a></p>
+    </div>
+    
+    <script>
+        console.log("Testing image loading...");
+        
+        // Test loading both images
+        const testWhite = new Image();
+        const testDark = new Image();
+        
+        testWhite.onload = () => console.log("✅ Logo blanco cargado correctamente");
+        testWhite.onerror = () => console.error("❌ Error cargando logo blanco");
+        testWhite.src = "/web/assets/img/logo/logo-white.png";
+        
+        testDark.onload = () => console.log("✅ Logo oscuro cargado correctamente");
+        testDark.onerror = () => console.error("❌ Error cargando logo oscuro");
+        testDark.src = "/web/assets/img/logo/logo.png";
+    </script>
+</body>
+</html>

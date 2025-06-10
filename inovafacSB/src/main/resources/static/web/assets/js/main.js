@@ -8,22 +8,44 @@
   function fadeout() {
     document.querySelector(".preloader").style.opacity = "0";
     document.querySelector(".preloader").style.display = "none";
-  }
-
-  /*=====================================
+  }  /*=====================================
     Sticky
     ======================================= */
+  // Pre-cargar las imágenes del logo para evitar problemas de carga
+  const logoWhite = new Image();
+  const logoDark = new Image();
+  logoWhite.src = "/web/assets/img/logo/logo-white.png";
+  logoDark.src = "/web/assets/img/logo/logo.png";
+
   window.onscroll = function () {
     const header_navbar = document.querySelector(".navbar-area");
-    const sticky = header_navbar.offsetTop;
     const logo = document.querySelector(".navbar-brand img");
 
-    if (window.pageYOffset > sticky) {
+    // Validar que los elementos existen
+    if (!logo || !header_navbar) {
+      console.error("Required elements not found!");
+      return;
+    }
+
+    // Usar un threshold de 50px en lugar de offsetTop para mejor comportamiento
+    const scrollThreshold = 50;
+
+    console.log("Current scroll position:", window.pageYOffset);
+    console.log("Scroll threshold:", scrollThreshold);
+    console.log("Current logo src:", logo.src);
+
+    if (window.pageYOffset > scrollThreshold) {
       header_navbar.classList.add("sticky");
-      logo.src = "./assets/img/logo.png";
+      console.log("Adding sticky - changing to dark logo");
+      // Para el header sticky (fondo blanco), usar logo oscuro
+      logo.src = logoDark.src;
+      console.log("Logo changed to:", logo.src);
     } else {
       header_navbar.classList.remove("sticky");
-      logo.src = "./assets/img/logo-white.png";
+      console.log("Removing sticky - changing to white logo");
+      // Para el header normal (fondo azul/oscuro), usar logo blanco
+      logo.src = logoWhite.src;
+      console.log("Logo changed to:", logo.src);
     }
 
     // show or hide the back-top-top button

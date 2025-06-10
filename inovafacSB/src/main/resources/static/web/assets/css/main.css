@@ -1621,7 +1621,12 @@ p {
 }
 
 .testimonial-section .testimonial-active-wrapper .testimonial-active .single-testimonial .testimonial-img img {
-  max-width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .testimonial-section .testimonial-active-wrapper .testimonial-active .single-testimonial .testimonial-img .quote {
@@ -2456,4 +2461,101 @@ p {
 
 .pb-225 {
   padding-bottom: 225px;
+}
+
+/* ===== REGLAS PERSONALIZADAS PARA TESTIMONIOS ===== */
+
+/* Optimización de imágenes de testimonios */
+.testimonial-img img {
+    max-width: 180px !important;
+    max-height: 180px !important;
+    width: 180px !important;
+    height: 180px !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Asegurar que el contenedor de imagen tenga tamaño fijo y esté más cerca del texto */
+.testimonial-img {
+    width: 180px !important;
+    height: 180px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    margin-right: 20px !important;
+}
+
+/* Ajustar el contenedor de testimonials para que estén más cerca */
+.single-testimonial .row {
+    align-items: center !important;
+    gap: 0 !important;
+}
+
+/* Reducir el espacio entre columnas */
+.single-testimonial .col-xl-5,
+.single-testimonial .col-lg-5 {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding-right: 15px !important;
+}
+
+.single-testimonial .col-xl-6,
+.single-testimonial .col-lg-6 {
+    flex: 1 !important;
+    padding-left: 15px !important;
+}
+
+/* Eliminar offset que causa espacio extra */
+.single-testimonial .offset-xl-1,
+.single-testimonial .offset-lg-1 {
+    margin-left: 0 !important;
+}
+
+/* Para imágenes del portal admin también */
+.admin-testimonios img,
+.flex-shrink-0 img {
+    max-width: 60px !important;
+    max-height: 60px !important;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+}
+
+/* Responsive design para testimonios */
+@media (max-width: 768px) {
+    .testimonial-img,
+    .testimonial-img img {
+        width: 120px !important;
+        height: 120px !important;
+        max-width: 120px !important;
+        max-height: 120px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .single-testimonial .row {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .single-testimonial .col-xl-5,
+    .single-testimonial .col-lg-5,
+    .single-testimonial .col-xl-6,
+    .single-testimonial .col-lg-6 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-img,
+    .testimonial-img img {
+        width: 100px !important;
+        height: 100px !important;
+        max-width: 100px !important;
+        max-height: 100px !important;
+    }
 }

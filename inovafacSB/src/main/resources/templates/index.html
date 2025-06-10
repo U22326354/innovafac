@@ -41,10 +41,9 @@
         <div class="navbar-area">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="./assets/img/logo-white.png" alt="Logo" />
+                    <div class="col-lg-12">                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                <img src="/web/assets/img/logo/logo-white.png" alt="Logo" />
                             </a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -52,17 +51,13 @@
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
-                            </button>
-
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            </button>                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
                                         <a class="page-scroll active" href="#home">Inicio</a>
-                                    </li>
-                                    <li class="nav-item">
+                                    </li>                                    <li class="nav-item">
                                         <a class="page-scroll" href="#features">Servicios</a>
                                     </li>
-
                                     <li class="nav-item">
                                         <a href="#pricing" class="page-scroll">Precios</a>
                                     </li>
@@ -71,9 +66,14 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#testimonials">Testimonios</a>
-                                    </li>
-                                    <li class="nav-item">
+                                    </li>                                    <li class="nav-item">
                                         <a class="page-scroll" href="#contact">Contacto</a>
+                                    </li>                                    <li class="nav-item">
+                                        <a href="/admin" class="btn btn-outline-light btn-sm ms-2 admin-link" 
+                                           style="text-decoration: none;" 
+                                           onclick="window.location.href='/admin'; return false;">
+                                            <i class="lni lni-cog"></i> Portal Admin
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -94,11 +94,8 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center position-relative">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1 class="wow fadeInUp h3" data-wow-delay=".4s">
-                            Sistema de Facturacion Electronica PERU
-                            <span <td th:text="${titulo}"  > </span>
+                <div class="col-lg-6">                    <div class="hero-content">                        <h1 class="wow fadeInUp h3" data-wow-delay=".4s">
+                            <span th:text="${titulo}">Sistema de Facturación Electrónica PERU</span>
                         </h1>
                         <p class="wow fadeInUp" data-wow-delay=".6s">
                             Siempre a la vanguardia de la tecnologia para tu empresa
@@ -651,10 +648,8 @@
                             <!-- single testimonial -->
                             <div class="single-testimonial tns-item tns-normal" id="tns1-item0" style=""
                                 aria-hidden="true" tabindex="-1">
-                                <div class="row">
-                                    <div class="col-xl-5 col-lg-5">
-                                        <div class="testimonial-img">
-                                            <!-- <img src="https://dummyimage.com/200x100/777/fff" alt="Lorem Ipsum"> -->
+                                <div class="row">                                    <div class="col-xl-5 col-lg-5">                                        <div class="testimonial-img">
+                                            <img src="/web/assets/img/testimonial/testimonial-1.jpg" alt="Erick Matahine" />
                                             <div class="quote">
                                                 <i class="lni lni-quotation"></i>
                                             </div>
@@ -682,9 +677,8 @@
                             <div class="single-testimonial tns-item tns-slide-active tns-fadeIn" id="tns1-item1"
                                 style="left: 0%;">
                                 <div class="row">
-                                    <div class="col-xl-5">
-                                        <div class="testimonial-img">
-                                           <!--  <img src="https://dummyimage.com/200x100/777/fff" alt=""> -->
+                                    <div class="col-xl-5">                                        <div class="testimonial-img">
+                                            <img src="/web/assets/img/testimonial/testimonial-2.jpg" alt="Gary Chaplot" />
                                             <div class="quote">
                                                 <i class="lni lni-quotation"></i>
                                             </div>
@@ -708,13 +702,12 @@
                                 </div>
                             </div>
 
-                            <!-- single testimonial -->
-                            <div class="single-testimonial tns-item tns-normal" id="tns1-item2" style=""
+                            <!-- single testimonial -->                            <div class="single-testimonial tns-item tns-normal" id="tns1-item2" style=""
                                 aria-hidden="true" tabindex="-1">
                                 <div class="row">
                                     <div class="col-xl-5">
                                         <div class="testimonial-img">
-                                            <!-- <img src="https://dummyimage.com/200x100/777/fff" alt=""> -->
+                                            <img src="/web/assets/img/testimonial/testimonial-3.jpg" alt="Iqrar Jaz" />
                                             <div class="quote">
                                                 <i class="lni lni-quotation"></i>
                                             </div>
@@ -739,10 +732,9 @@
                             </div>
                             <div class="single-testimonial tns-item tns-slide-cloned tns-normal" style=""
                                 aria-hidden="true" tabindex="-1">
-                                <div class="row">
-                                    <div class="col-xl-5 col-lg-5">
+                                <div class="row">                                    <div class="col-xl-5 col-lg-5">
                                         <div class="testimonial-img">
-                                            <!-- <img src="https://dummyimage.com/200x100/777/fff" alt=""> -->
+                                            <img src="/web/assets/img/testimonial/testimonial-1.jpg" alt="Erick Matahine" />
                                             <div class="quote">
                                                 <i class="lni lni-quotation"></i>
                                             </div>
@@ -867,10 +859,9 @@
             <div class="widget-wrapper">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="footer-widget">
-                            <div class="logo mb-30">
+                        <div class="footer-widget">                            <div class="logo mb-30">
                                 <a href="index.html">
-                                    <img src="./assets/img/logo-white.png" alt="" />
+                                    <img src="web/assets/img/logo/logo-white.png" alt="" />
                                 </a>
                             </div>
                             <p class="desc mb-30 text-white">

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Logo - CMCINNOVA</title>
+    <link rel="stylesheet" href="src/main/resources/static/web/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="src/main/resources/static/web/assets/css/main.css" />
+    <style>
+        body {
+            height: 200vh; /* Para hacer scroll */
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            padding-top: 100px;
+        }
+        .test-content {
+            padding: 50px;
+            background: white;
+            margin: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navbar-area {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .navbar-area.sticky {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar {
+            padding: 15px 0;
+        }
+        .navbar-brand img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="#">
+                                <img src="src/main/resources/static/web/assets/img/logo/logo-white.png" alt="Logo" />
+                            </a>
+                            <div class="navbar-nav ms-auto">
+                                <a class="nav-link" href="#test">Test</a>
+                                <a class="nav-link" href="#scroll">Scroll</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="test-content">
+        <h1>🔧 Test de Logo con Scroll</h1>
+        <p><strong>Instrucciones:</strong></p>
+        <ol>
+            <li>Al cargar la página, deberías ver el logo blanco en el header</li>
+            <li>Al hacer scroll hacia abajo, el header se volverá blanco y el logo debería cambiar a la versión oscura</li>
+            <li>Al volver arriba, el header se vuelve transparente y el logo vuelve a ser blanco</li>
+            <li>Abre las herramientas de desarrollador (F12) para ver los mensajes de debug en la consola</li>
+        </ol>
+        
+        <h2>📊 Estado del Debug</h2>
+        <p>Los mensajes de consola te mostrarán:</p>
+        <ul>
+            <li>La posición actual del scroll</li>
+            <li>El estado del sticky header</li>
+            <li>Los cambios de URL del logo</li>
+            <li>Cualquier error que pueda ocurrir</li>
+        </ul>
+
+        <h2>🎯 Comportamiento Esperado</h2>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+            <p><strong>Posición inicial:</strong> Logo blanco visible</p>
+            <p><strong>Después del scroll:</strong> Logo oscuro visible</p>
+            <p><strong>Si aparece "Logo" como texto:</strong> Hay un problema con las rutas de las imágenes</p>
+        </div>
+
+        <div style="height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; margin: 50px 0; border-radius: 10px;">
+            <div style="text-align: center;">
+                <h2>🚀 Área de Scroll</h2>
+                <p>Haz scroll hacia arriba y abajo para probar el cambio de logo</p>
+                <p>Verifica que el logo cambie correctamente entre las versiones blanca y oscura</p>
+            </div>
+        </div>
+
+        <h2>✅ Solución Implementada</h2>
+        <p>Se implementaron las siguientes mejoras:</p>
+        <ul>
+            <li><strong>Pre-carga de imágenes:</strong> Las imágenes del logo se cargan al inicio para evitar retrasos</li>
+            <li><strong>URLs absolutas:</strong> Se construyen URLs completas basadas en la ubicación actual</li>
+            <li><strong>Debug extenso:</strong> Mensajes detallados en la consola para diagnóstico</li>
+            <li><strong>Manejo de errores:</strong> Verificación de que el elemento logo existe</li>
+        </ul>
+    </div>
+
+    <div class="scroll-indicator">
+        📍 Haz scroll para probar el logo
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        (function () {
+            // Preloader simulado
+            window.onload = function () {
+                console.log("✅ Página cargada - Iniciando test de logo");
+            };
+
+            /*=====================================
+            Sticky Header con Logo Dinámico
+            ======================================= */
+            // Pre-cargar las imágenes del logo para evitar problemas de carga
+            const darkLogo = new Image();
+            const whiteLogo = new Image();
+            darkLogo.src = "src/main/resources/static/web/assets/img/logo/logo.png";
+            whiteLogo.src = "src/main/resources/static/web/assets/img/logo/logo-white.png";
+            
+            console.log("🔄 Pre-cargando logos:");
+            console.log("  - Logo oscuro:", darkLogo.src);
+            console.log("  - Logo blanco:", whiteLogo.src);
+            
+            window.onscroll = function () {
+                const header_navbar = document.querySelector(".navbar-area");
+                const sticky = header_navbar.offsetTop;
+                const logo = document.querySelector(".navbar-brand img");
+
+                if (!logo) {
+                    console.error("❌ Logo element not found!");
+                    return;
+                }
+
+                console.log("📊 Scroll Info:");
+                console.log("  - Current logo src:", logo.src);
+                console.log("  - Window scroll position:", window.pageYOffset);
+                console.log("  - Sticky offset:", sticky);
+
+                if (window.pageYOffset > sticky) {
+                    header_navbar.classList.add("sticky");
+                    console.log("⬇️ Adding sticky class - changing to dark logo");
+                    // Construir URL absoluta basada en la ubicación actual
+                    const baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname.replace(/\/[^\/]*$/, '/');
+                    const darkLogoUrl = baseUrl + "src/main/resources/static/web/assets/img/logo/logo.png";
+                    logo.src = darkLogoUrl;
+                    console.log("  ✅ New logo src set to:", darkLogoUrl);
+                } else {
+                    header_navbar.classList.remove("sticky");
+                    console.log("⬆️ Removing sticky class - changing to white logo");
+                    // Construir URL absoluta basada en la ubicación actual
+                    const baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname.replace(/\/[^\/]*$/, '/');
+                    const whiteLogoUrl = baseUrl + "src/main/resources/static/web/assets/img/logo/logo-white.png";
+                    logo.src = whiteLogoUrl;
+                    console.log("  ✅ New logo src set to:", whiteLogoUrl);
+                }
+            };
+
+            // Test inicial
+            setTimeout(() => {
+                const logo = document.querySelector(".navbar-brand img");
+                if (logo) {
+                    console.log("🎯 Logo inicial encontrado:", logo.src);
+                    console.log("🔍 Logo alt text:", logo.alt);
+                    console.log("📐 Logo dimensions:", logo.offsetWidth + "x" + logo.offsetHeight);
+                } else {
+                    console.error("❌ No se pudo encontrar el elemento del logo");
+                }
+            }, 1000);
+
+        })();
+    </script>
+</body>
+</html>
